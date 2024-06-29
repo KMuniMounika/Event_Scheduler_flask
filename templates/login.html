@@ -1,0 +1,124 @@
+<!--
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .ui.container {
+                max-width: 400px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ui container">
+            <h2 class="ui center aligned header">Login</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <script>
+                        window.onload = function() {
+                            {% for category, message in messages %}
+                                alert("{{ message }}");
+                            {% endfor %}
+                        }
+                    </script>
+                {% endif %}
+            {% endwith %}
+            <form class="ui form" action="/login" method="post">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter Username" required>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+                <button class="ui blue button" type="submit">Login</button>
+            </form>
+            <div style="margin-top: 10px;">
+                <a href="/signup">Don't have an account? Sign up here</a>
+            </div>
+        </div>
+    </body>
+    </html>
+-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ui.container {
+            max-width: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui container">
+        <h2 class="ui center aligned header">Login</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    window.onload = function() {
+                        {% for message in messages %}
+                            alert("{{ message }}");
+                        {% endfor %}
+                    }
+                </script>
+            {% endif %}
+        {% endwith %}
+        <form class="ui form" action="/login" method="post">
+            <div class="field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter Username" required>
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter Password" required>
+            </div>
+            <button class="ui blue button" type="submit">Login</button>
+        </form>
+        <div style="margin-top: 10px;">
+            <a href="/signup">Don't have an account? Sign up here</a>
+        </div>
+    </div>
+</body>
+</html>
+    
